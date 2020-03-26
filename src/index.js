@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./app.js";
 
-ReactDOM.render(
-  <App title="Recipe" name="Ramon" />,
-  document.getElementById("root")
-);
+import App from "./components/App/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));

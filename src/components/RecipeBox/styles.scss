@@ -1,0 +1,23 @@
+.recipeBox {
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px darken(#ebdecb, 20%);
+  display: flex;
+
+  .content {
+    padding: 20px;
+  }
+
+  .label {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .thumb {
+    width: 155px;
+    height: 155px;
+    background: #dfdfdf;
+    border-radius: 5px 0 0 5px;
+  }
+}
