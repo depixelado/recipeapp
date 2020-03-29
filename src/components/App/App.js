@@ -6,7 +6,7 @@ import SearchBox from "../SearchBox/SearchBox";
 import "./styles.scss";
 
 const url =
-  "https://api.edamam.com/search?q=chicken&app_id=4b656b44&app_key= 203ba625f4419c5c9f0253448a19fc41";
+  "https://api.edamam.com/search?q=potato&app_id=4b656b44&app_key=203ba625f4419c5c9f0253448a19fc41";
 
 class App extends React.Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class App extends React.Component {
         <div className="recipeList">
           {this.state.recipes.map(recipe => (
             <RecipeBox
-              image={recipe.image}
+              img={recipe.image}
               label={recipe.label}
               cookingTime={recipe.totalTime}
               calories={recipe.calories}

@@ -3,11 +3,11 @@ import Icon from "react-fontawesome";
 
 import "./styles.scss";
 
-function RecipeBox({ image, label, cookingTime, calories, source, dietType }) {
+function RecipeBox({ img, label, cookingTime, calories, source, dietType }) {
   return (
     <div className="recipeBox">
       <div className="thumb">
-        <img src={image} />
+        <img src={img} />
       </div>
       <div className="content">
         <div className="label">{label}</div>
