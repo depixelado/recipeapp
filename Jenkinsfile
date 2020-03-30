@@ -7,14 +7,14 @@ pipeline {
         git 'https://github.com/depixelado/recipeapp.git'
       }
     }
-    stage('Build') {
+    stage('Install dependencies') {
        steps {
          sh 'npm install'
        }
     }
-    stage('NPM version') {
+    stage('Test') {
       steps {
-        sh 'npm -v'
+        sh 'npm run test'
       }
     }
   }
