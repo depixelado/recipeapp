@@ -1,21 +1,15 @@
 pipeline {
-  agent any
-  tools {nodejs "node" }
-  stages {
-    stage('Cloning Git') {
-      steps {
-        git 'https://github.com/depixelado/recipeapp.git'
-      }
+    agent {
+        docker {
+            image 'node:6-alpine' 
+            args '-p 3000:3000' 
+        }
     }
-    stage('Build') {
-       steps {
-         sh 'npm install'
-       }
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'node -v' 
+            }
+        }
     }
-    stage('NPM version') {
-      steps {
-        sh 'npm -v'
-      }
-    }
-  }
 }
