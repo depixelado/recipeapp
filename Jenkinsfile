@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  tools { nodejs }
+  tools { nodejs "nodelts" }
   stages {
     stage('Cloning Git') {
       steps {
