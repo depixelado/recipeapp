@@ -3,13 +3,38 @@ import Icon from "react-fontawesome";
 
 import "./styles.scss";
 
-function SearchBox() {
-  return (
-    <div className="searchBox">
-      <input className="search" type="text" placeholder="Busca una receta" />
-      <input className="searchBtn" type="button" value="Busca" />
-    </div>
-  );
+class SearchBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.searchInputRef = React.createRef();
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch() {
+    const searchQuery = this.searchInputRef.current.value;
+    const { onSearch } = this.props;
+    onSearch(searchQuery);
+  }
+
+  render() {
+    const { searchBtnText, placeholder } = this.props;
+    return (
+      <div className="searchBox">
+        <input
+          ref={this.searchInputRef}
+          className="search"
+          type="text"
+          placeholder={placeholder}
+        />
+        <input
+          onClick={this.handleSearch}
+          className="searchBtn"
+          type="button"
+          value={searchBtnText}
+        />
+      </div>
+    );
+  }
 }
 
 export default SearchBox;
